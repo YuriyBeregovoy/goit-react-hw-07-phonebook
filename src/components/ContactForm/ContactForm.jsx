@@ -8,11 +8,11 @@ import { useSelector } from "react-redux";
 export const ContactForm = () => {
 
   const dispatch = useDispatch();
-  const contacts = useSelector((state) =>  state.contacts.contacts) || [];
+  const contacts = useSelector((state) =>  state.contacts.items) || [];
    const handleNameSet = e => {
     e.preventDefault();
-      const { name, number } = e.currentTarget.elements;
-     const newContact = { name: name.value, number: number.value, };
+      const { name, phone} = e.currentTarget.elements;
+     const newContact = { name: name.value, phone: phone.value, };
      
   console.log(contacts)
 
@@ -41,7 +41,7 @@ export const ContactForm = () => {
           <span>Number</span>
           <input
         type="tel"
-        name="number"
+        name="phone"
                 />
         </LabelContacts>
        <FormButton type="submit">Add contact</FormButton>
