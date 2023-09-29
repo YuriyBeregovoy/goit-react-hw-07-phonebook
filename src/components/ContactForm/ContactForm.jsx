@@ -11,10 +11,10 @@ export const ContactForm = () => {
   const contacts = useSelector((state) =>  state.contacts.items) || [];
    const handleNameSet = e => {
     e.preventDefault();
-      const { name, phone} = e.currentTarget.elements;
-     const newContact = { name: name.value, phone: phone.value, };
+      const { name, number} = e.currentTarget.elements;
+     const newContact = { name: name.value, number: number.value, };
      
-  console.log(contacts)
+
 
   const isExistingContact = contacts.find(
       contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
@@ -41,7 +41,7 @@ export const ContactForm = () => {
           <span>Number</span>
           <input
         type="tel"
-        name="phone"
+        name="number"
                 />
         </LabelContacts>
        <FormButton type="submit">Add contact</FormButton>
