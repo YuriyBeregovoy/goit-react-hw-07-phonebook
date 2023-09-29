@@ -8,7 +8,7 @@ export const ContactList = () => {
 const dispatch = useDispatch();
 
 const filter = useSelector((state) => state.filter.filter);
-  const contacts = useSelector((state) => state.contacts);
+  const contacts = useSelector((state) => state.contacts.items);
 
  const handleContactDelete = (id) => {
     dispatch(deleteContacts(id));
